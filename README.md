@@ -1,6 +1,6 @@
 # multvardiv
 
-The **multvardiv** packages replaces the [mggd](https://forgemia.inra.fr/imhorphen/mggd), [mcauchyd](https://forgemia.inra.fr/imhorphen/mcauchyd) and [mstudentd](https://forgemia.inra.fr/imhorphen/mstudentd) packages.
+The **multvardiv** packages replaces the [mggd](https://forge.inrae.fr/imhorphen/mggd), [mcauchyd](https://forge.inrae.fr/imhorphen/mcauchyd) and [mstudentd](https://forge.inrae.fr/imhorphen/mstudentd) packages.
 
 This package provides tools for multivariate probability distributions:
 
@@ -21,20 +21,16 @@ And some functions for the manipulation of probability distributions:
 
 # Installation
 
-<!--
 Install the package from CRAN:
 ```
 install.packages("multvardiv")
 ```
 
-Or install the development version from the repository, using the `devtools` package:
--->
-
-Install from the repository, using the [`devtools`](https://CRAN.R-project.org/package=devtools) package:
+Or install the development version from the repository, using the [`devtools`](https://CRAN.R-project.org/package=devtools) package:
 
 ```
 install.packages("devtools")
-devtools::install_git("https://forgemia.inra.fr/imhorphen/multvardiv")
+devtools::install_git("https://forge.inrae.fr/imhorphen/multvardiv")
 ```
 
 ## Authors

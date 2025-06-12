@@ -1,4 +1,4 @@
-2416a3a22a945fce0d7e4846068c314f *DESCRIPTION
+bca25e4c0715e58b32eb54c7ba679556 *DESCRIPTION
 0511d0e507a5365be0b0affb8036a58d *NAMESPACE
 73b44c565ce553000502a9233c43a288 *R/contourmvd.R
 593990ca354ae6a356f95ce94b236167 *R/diststudent.R
@@ -21,8 +21,8 @@ b9470c6ae1c5d24e96203f657729f906 *R/multvardiv-package.R
 103e2a8cd5579e205c3de1e52b21a7eb *R/rmcd.R
 b30ae50fcf0ad3c3dfb9feb68cdf5df0 *R/rmggd.R
 89e3155f8822896f4d75355b28ae89dd *R/rmtd.R
-a19de870019e66ad1066f79b0368fbc6 *README.md
-1dda19015f0aa969acee990c150e3ac9 *build/partial.rdb
+c55755e544e802531424f0bac5a08f55 *README.md
+cb3b20077bebc5da31fc1b46c657c0ff *build/partial.rdb
 e66dce235fd06e8a8a426ac8837fd0ed *man/contourmvd.Rd
 67fcae1eba8438d0eb768710cb976423 *man/diststudent.Rd
 efa9f19cacd772f98758108566982725 *man/dmcd.Rd
@@ -37,7 +37,7 @@ d07da0c555546bb4db0b84c603a1193f *man/estparmtd.Rd
 a1bf27333820ac8248dd9db36e988129 *man/kldstudent.Rd
 0ab3e60217072b4b44e7c851fcf3586b *man/lauricella.Rd
 a411e34a74d796614d3f37852fc83af3 *man/lnpochhammer.Rd
-4fe1959555c64aed74d2cae792067742 *man/multvardiv-package.Rd
+27278774546e0ddde1cf8156ead1388d *man/multvardiv-package.Rd
 a36f1beb7457fa1072ad480cdbe3be87 *man/plotmvd.Rd
 2e58e163b0a5e1d67e238d349705bb00 *man/pochhammer.Rd
 7dfd15c32f4250bc72808be0ceba1568 *man/rmcd.Rd
