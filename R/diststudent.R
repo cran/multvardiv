@@ -13,6 +13,8 @@ diststudent <- function(nu1, Sigma1, nu2, Sigma2, dist = c("renyi", "bhattachary
   #' @param nu1 numeric. The degrees of freedom of the first distribution.
   #' @param Sigma1 symmetric, positive-definite matrix. The correlation matrix of the first distribution.
   #' @param nu2 numeric. The degrees of freedom of the second distribution.
+  #' 
+  #' \code{nu1} and \code{nu2} must not be too small compared to the number of variables. See 
   #' @param Sigma2 symmetric, positive-definite matrix. The correlation matrix of the second distribution.
   #' @param dist character. The distance or divergence used.
   #' One of \code{"renyi"} (default), \code{"battacharyya"} or \code{"hellinger"}.
@@ -22,6 +24,16 @@ diststudent <- function(nu1, Sigma1, nu2, Sigma2, dist = c("renyi", "bhattachary
   #' @return A numeric value: the divergence between the two distributions,
   #' with two attributes \code{attr(, "epsilon")} (precision of the result of the Lauricella \eqn{D}-hypergeometric function,see Details)
   #' and \code{attr(, "k")} (number of iterations).
+  #' 
+  #' @section Warning:
+  #' Let \code{p} the dimension (number of variables),
+  #' let \code{delta1 = bet*(nu1 + p)/2}
+  #' and \code{delta2 = (1 - bet)*(nu2 + p)/2}.
+  #' 
+  #' This computation needs that \code{delta1 + delta2 - p/2 > 0}.
+  #' 
+  #' If \code{delta1 + delta2 - p/2 <= 0}, \code{diststudent}
+  #' returns \code{NaN} with a warning
   #'
   #' @details Given \eqn{X_1}, a random vector of \eqn{\mathbb{R}^p} distributed according to the MTD
   #' with parameters \eqn{(\nu_1, \mathbf{0}, \Sigma_1)}
@@ -31,7 +43,8 @@ diststudent <- function(nu1, Sigma1, nu2, Sigma2, dist = c("renyi", "bhattachary
   #' Let \eqn{\delta_1 = \frac{\nu_1 + p}{2} \beta}, \eqn{\delta_2 = \frac{\nu_2 + p}{2} (1 - \beta)}
   #' and \eqn{\lambda_1, \dots, \lambda_p} the eigenvalues of the square matrix \eqn{\Sigma_1 \Sigma_2^{-1}}
   #' sorted in increasing order: \deqn{\lambda_1 < \dots < \lambda_{p-1} < \lambda_p}
-  #' The Renyi divergence between \eqn{X_1} and \eqn{X_2} is:
+  #' 
+  #' If \eqn{\delta_1 + \delta_2 - \frac{p}{2} > 0}, the Renyi divergence between \eqn{X_1} and \eqn{X_2} is:
   #' \deqn{
   #' \begin{aligned}
   #' D_R^\beta(\mathbf{X}_1||\mathbf{X}_1) &  = & \displaystyle{\frac{1}{\beta - 1} \bigg[ \beta \ln\left(\frac{\Gamma\left(\frac{\nu_1+p}{2}\right) \Gamma\left(\frac{\nu_2}{2}\right) \nu_2^{\frac{p}{2}}}{\Gamma\left(\frac{\nu_2+p}{2}\right) \Gamma\left(\frac{\nu_1}{2}\right) \nu_1^{\frac{p}{2}}}\right) + \ln\left(\frac{\Gamma\left(\frac{\nu_2+p}{2}\right)}{\Gamma\left(\frac{\nu_2}{2}\right)}\right) + \ln\left(\frac{\Gamma\left(\delta_1 + \delta_2 - \frac{p}{2}\right)}{\Gamma(\delta_1 + \delta_2)}\right) } \\
@@ -60,6 +73,8 @@ diststudent <- function(nu1, Sigma1, nu2, Sigma2, dist = c("renyi", "bhattachary
   #' where \eqn{F_D^{(p)}} is the Lauricella \eqn{D}-hypergeometric function defined for \eqn{p} variables:
   #' \deqn{ \displaystyle{ F_D^{(p)}\left(a; b_1, ..., b_p; g; x_1, ..., x_p\right) = \sum\limits_{m_1 \geq 0} ... \sum\limits_{m_p \geq 0}{ \frac{ (a)_{m_1+...+m_p}(b_1)_{m_1} ... (b_p)_{m_p} }{ (g)_{m_1+...+m_p} } \frac{x_1^{m_1}}{m_1!} ... \frac{x_p^{m_p}}{m_p!} } } }
   #' Its computation uses the \code{\link{lauricella}} function.
+  #' 
+  #' If \eqn{\delta_1 + \delta_2 - \frac{p}{2} \leq 0}, \code{diststudent} returns \code{NaN}.
   #'
   #' The Bhattacharyya distance is given by:
   #' \deqn{D_B(\mathbf{X}_1||\mathbf{X}_2) = \frac{1}{2} D_R^{1/2}(\mathbf{X}_1||\mathbf{X}_2)}
@@ -148,6 +163,12 @@ diststudent <- function(nu1, Sigma1, nu2, Sigma2, dist = c("renyi", "bhattachary
   nulambda <- lambda*nu1/nu2
 
   delta1 <- bet*(nu1 + p)/2; delta2 <- (1 - bet)*(nu2 + p)/2
+  
+  # The computation needs that delta1 + delta2 - p/2 > 0
+  if (delta1 + delta2 - p/2 <= 0) {
+    warning("The divergence cannot be computed with these values of nu1, nu2 and beta. See help(diststudent) - Warning section.")
+    return(NaN)
+  }
 
   if (nulambda[1] > 1) {
     lauric <- lauricella(delta1, rep(0.5, p), delta1 + delta2, 1 - 1/nulambda, eps = eps)

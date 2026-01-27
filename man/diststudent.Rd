@@ -13,7 +13,9 @@ diststudent(nu1, Sigma1, nu2, Sigma2,
 
 \item{Sigma1}{symmetric, positive-definite matrix. The correlation matrix of the first distribution.}
 
-\item{nu2}{numeric. The degrees of freedom of the second distribution.}
+\item{nu2}{numeric. The degrees of freedom of the second distribution.
+
+\code{nu1} and \code{nu2} must not be too small compared to the number of variables. See}
 
 \item{Sigma2}{symmetric, positive-definite matrix. The correlation matrix of the second distribution.}
 
@@ -44,7 +46,8 @@ with parameters \eqn{(\nu_2, \mathbf{0}, \Sigma_2)}.
 Let \eqn{\delta_1 = \frac{\nu_1 + p}{2} \beta}, \eqn{\delta_2 = \frac{\nu_2 + p}{2} (1 - \beta)}
 and \eqn{\lambda_1, \dots, \lambda_p} the eigenvalues of the square matrix \eqn{\Sigma_1 \Sigma_2^{-1}}
 sorted in increasing order: \deqn{\lambda_1 < \dots < \lambda_{p-1} < \lambda_p}
-The Renyi divergence between \eqn{X_1} and \eqn{X_2} is:
+
+If \eqn{\delta_1 + \delta_2 - \frac{p}{2} > 0}, the Renyi divergence between \eqn{X_1} and \eqn{X_2} is:
 \deqn{
 \begin{aligned}
 D_R^\beta(\mathbf{X}_1||\mathbf{X}_1) &  = & \displaystyle{\frac{1}{\beta - 1} \bigg[ \beta \ln\left(\frac{\Gamma\left(\frac{\nu_1+p}{2}\right) \Gamma\left(\frac{\nu_2}{2}\right) \nu_2^{\frac{p}{2}}}{\Gamma\left(\frac{\nu_2+p}{2}\right) \Gamma\left(\frac{\nu_1}{2}\right) \nu_1^{\frac{p}{2}}}\right) + \ln\left(\frac{\Gamma\left(\frac{\nu_2+p}{2}\right)}{\Gamma\left(\frac{\nu_2}{2}\right)}\right) + \ln\left(\frac{\Gamma\left(\delta_1 + \delta_2 - \frac{p}{2}\right)}{\Gamma(\delta_1 + \delta_2)}\right) } \\
@@ -74,12 +77,26 @@ where \eqn{F_D^{(p)}} is the Lauricella \eqn{D}-hypergeometric function defined 
 \deqn{ \displaystyle{ F_D^{(p)}\left(a; b_1, ..., b_p; g; x_1, ..., x_p\right) = \sum\limits_{m_1 \geq 0} ... \sum\limits_{m_p \geq 0}{ \frac{ (a)_{m_1+...+m_p}(b_1)_{m_1} ... (b_p)_{m_p} }{ (g)_{m_1+...+m_p} } \frac{x_1^{m_1}}{m_1!} ... \frac{x_p^{m_p}}{m_p!} } } }
 Its computation uses the \code{\link{lauricella}} function.
 
+If \eqn{\delta_1 + \delta_2 - \frac{p}{2} \leq 0}, \code{diststudent} returns \code{NaN}.
+
 The Bhattacharyya distance is given by:
 \deqn{D_B(\mathbf{X}_1||\mathbf{X}_2) = \frac{1}{2} D_R^{1/2}(\mathbf{X}_1||\mathbf{X}_2)}
 
 And the Hellinger distance is given by:
 \deqn{D_H(\mathbf{X}_1||\mathbf{X}_2) = 1 - \exp{\left(-\frac{1}{2} D_R^{1/2}(\mathbf{X}_1||\mathbf{X}_2)\right)}}
 }
+\section{Warning}{
+
+Let \code{p} the dimension (number of variables),
+let \code{delta1 = bet*(nu1 + p)/2}
+and \code{delta2 = (1 - bet)*(nu2 + p)/2}.
+
+This computation needs that \code{delta1 + delta2 - p/2 > 0}.
+
+If \code{delta1 + delta2 - p/2 <= 0}, \code{diststudent}
+returns \code{NaN} with a warning
+}
+
 \examples{
 nu1 <- 2
 Sigma1 <- matrix(c(2, 1.2, 0.4, 1.2, 2, 0.6, 0.4, 0.6, 2), nrow = 3)

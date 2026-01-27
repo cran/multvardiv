@@ -13,9 +13,11 @@ dmtd(x, nu, mu, Sigma, tol = 1e-6)
 
 \item{mu}{length \eqn{p} numeric vector. The mean vector.}
 
-\item{Sigma}{symmetric, positive-definite square matrix of order \eqn{p}. The correlation matrix.}
+\item{Sigma}{symmetric, positive-definite square matrix of order \eqn{p}.
+The correlation matrix.}
 
-\item{tol}{tolerance (relative to largest variance) for numerical lack of positive-definiteness in Sigma.}
+\item{tol}{tolerance (relative to largest variance) for numerical lack of
+positive-definiteness in Sigma.}
 }
 \value{
 The value of the density.
@@ -30,7 +32,8 @@ The density function of a multivariate \eqn{t} distribution
 with \eqn{p} variables is given by:
 \deqn{ \displaystyle{ f(\mathbf{x}|\nu, \boldsymbol{\mu}, \Sigma) = \frac{\Gamma\left( \frac{\nu+p}{2} \right) |\Sigma|^{-1/2}}{\Gamma\left( \frac{\nu}{2} \right) (\nu \pi)^{p/2}} \left( 1 + \frac{1}{\nu} (\mathbf{x}-\boldsymbol{\mu})^T \Sigma^{-1} (\mathbf{x}-\boldsymbol{\mu}) \right)^{-\frac{\nu+p}{2}} } }
 
-When \eqn{p=1} (univariate case) it is the location-scale \eqn{t} distribution, with density function:
+When \eqn{p=1} (univariate case) it is the location-scale \eqn{t}
+distribution, with density function:
 \deqn{ \displaystyle{ f(x|\nu, \mu, \sigma^2) = \frac{\Gamma\left( \frac{\nu+1}{2} \right)}{\Gamma\left( \frac{\nu}{2} \right) \sqrt{\nu \pi \sigma^2}} \left(1 + \frac{(x-\mu)^2}{\nu \sigma^2}\right)^{-\frac{\nu+1}{2}} } }
 }
 \examples{
@@ -46,14 +49,17 @@ dt(1, 3)
 
 }
 \references{
-S. Kotz and Saralees Nadarajah (2004), Multivariate \eqn{t} Distributions and Their Applications, Cambridge University Press.
+S. Kotz and Saralees Nadarajah (2004),
+Multivariate \eqn{t} Distributions and Their Applications,
+Cambridge University Press.
 }
 \seealso{
 \code{\link{rmtd}}: random generation from a MTD.
 
 \code{\link{estparmtd}}: estimation of the parameters of a MTD.
 
-\code{\link{plotmvd}}, \code{\link{contourmvd}}: plot of the probability density of a bivariate distribution.
+\code{\link{plotmvd}}, \code{\link{contourmvd}}: plot of the
+probability density of a bivariate distribution.
 }
 \author{
 Pierre Santagostini, Nizar Bouhlel
