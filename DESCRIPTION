@@ -1,7 +1,9 @@
 Package: multvardiv
 Type: Package
-Title: Multivariate Probability Distributions, Statistical Divergence
-Version: 1.0.14
+Title: Multivariate Generalized Gaussian Distribution, Multivariate t
+        Distribution, Multivariate Cauchy Distribution, Statistical
+        Divergence
+Version: 1.0.15
 Authors@R: c(
     person("Pierre", "Santagostini", email = "pierre.santagostini@institut-agro.fr", role = c("aut", "cre")),
     person("Nizar", "Bouhlel", email = c("nizar.bouhlel@institut-agro.fr", "nizar.bouhlel@inrae.fr"), role = c("aut"))
@@ -25,8 +27,8 @@ RoxygenNote: 7.3.3
 Suggests: testthat (>= 3.2.1)
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2026-01-27 15:28:51 UTC; psantagosti
+Packaged: 2026-03-05 18:32:50 UTC; psantagosti
 Author: Pierre Santagostini [aut, cre],
   Nizar Bouhlel [aut]
 Repository: CRAN
-Date/Publication: 2026-01-27 17:20:02 UTC
+Date/Publication: 2026-03-05 19:10:07 UTC
