@@ -3,7 +3,7 @@ Type: Package
 Title: Multivariate Generalized Gaussian Distribution, Multivariate t
         Distribution, Multivariate Cauchy Distribution, Statistical
         Divergence
-Version: 1.0.15
+Version: 1.0.16
 Authors@R: c(
     person("Pierre", "Santagostini", email = "pierre.santagostini@institut-agro.fr", role = c("aut", "cre")),
     person("Nizar", "Bouhlel", email = c("nizar.bouhlel@institut-agro.fr", "nizar.bouhlel@inrae.fr"), role = c("aut"))
@@ -21,14 +21,14 @@ Depends: R (>= 4.4.0)
 Imports: rgl, MASS, data.table
 License: GPL (>= 3)
 URL: https://forge.inrae.fr/imhorphen/multvardiv
-BugReports: https://forge.inrae.fr/imhorphen/multvardiv/-/issues
+BugReports: https://forge.inrae.fr/imhorphen/multvardiv/-/work_items
 Encoding: UTF-8
-RoxygenNote: 7.3.3
 Suggests: testthat (>= 3.2.1)
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.0
 NeedsCompilation: no
-Packaged: 2026-03-05 18:32:50 UTC; psantagosti
+Packaged: 2026-09-08 10:42:45 UTC; psantagosti
 Author: Pierre Santagostini [aut, cre],
   Nizar Bouhlel [aut]
 Repository: CRAN
-Date/Publication: 2026-03-05 19:10:07 UTC
+Date/Publication: 2026-09-08 11:50:02 UTC

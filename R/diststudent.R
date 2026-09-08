@@ -74,7 +74,8 @@ diststudent <- function(nu1, Sigma1, nu2, Sigma2, dist = c("renyi", "bhattachary
   #' \deqn{ \displaystyle{ F_D^{(p)}\left(a; b_1, ..., b_p; g; x_1, ..., x_p\right) = \sum\limits_{m_1 \geq 0} ... \sum\limits_{m_p \geq 0}{ \frac{ (a)_{m_1+...+m_p}(b_1)_{m_1} ... (b_p)_{m_p} }{ (g)_{m_1+...+m_p} } \frac{x_1^{m_1}}{m_1!} ... \frac{x_p^{m_p}}{m_p!} } } }
   #' Its computation uses the \code{\link{lauricella}} function.
   #' 
-  #' If \eqn{\delta_1 + \delta_2 - \frac{p}{2} \leq 0}, \code{diststudent} returns \code{NaN}.
+  #' If \eqn{\delta_1 + \delta_2 - \frac{p}{2} \leq 0}, \code{diststudent} returns \code{NaN}
+  #' with a warning.
   #'
   #' The Bhattacharyya distance is given by:
   #' \deqn{D_B(\mathbf{X}_1||\mathbf{X}_2) = \frac{1}{2} D_R^{1/2}(\mathbf{X}_1||\mathbf{X}_2)}

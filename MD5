@@ -1,8 +1,8 @@
-1f26aa2df9f22111225a4b8388be6432 *DESCRIPTION
-0511d0e507a5365be0b0affb8036a58d *NAMESPACE
-b76d7b7d0ca6c05759e620cd67b17ca5 *NEWS.md
+39c46e1d3d24858117aa081ac565c667 *DESCRIPTION
+cec9e74e867bcf3090b6d30ae00d698b *NAMESPACE
+caeaed20383a6619185b70cbd34a1ab1 *NEWS.md
 73b44c565ce553000502a9233c43a288 *R/contourmvd.R
-56a277e496b0ced7a903f9c2dbb21a01 *R/diststudent.R
+acaa03e5b57da73a503a8feb1d2a1518 *R/diststudent.R
 a58aa1809daeacfb626d936599a19eff *R/dlauricella.R
 69912d8b7f153e35807a440d5d0b01d6 *R/dmcd.R
 f108bd5b95305113c23b996826897ec9 *R/dmggd.R
@@ -12,7 +12,7 @@ e0c7a23e7fea585ebdbad99d32614dfc *R/estparmggd.R
 060b3f62192af02ba4b28590d0c633aa *R/estparmtd.R
 a3636a87253dda4c03ff71f884e8d6a4 *R/kld.R
 90dbd0f0812923ab7cab489b53434e92 *R/kldcauchy.R
-2b877300aa888f2809592600019c9afd *R/kldggd.R
+8dc0fc2f90a3c9ca66d6e369d1a48f9f *R/kldggd.R
 f460cd3b4579664308b2238922d61348 *R/kldstudent.R
 23df2b0d0d18149c644bb7457d7203bd *R/lauricella.R
 f381fe947837560cda1db3282c0c0c09 *R/lnpochhammer.R
@@ -23,9 +23,9 @@ b9470c6ae1c5d24e96203f657729f906 *R/multvardiv-package.R
 b30ae50fcf0ad3c3dfb9feb68cdf5df0 *R/rmggd.R
 89e3155f8822896f4d75355b28ae89dd *R/rmtd.R
 c55755e544e802531424f0bac5a08f55 *README.md
-d54042561b90aafd8a9a202ea63e1e4b *build/partial.rdb
+6af8e7644a2c366a25339b1923c9a048 *build/partial.rdb
 e66dce235fd06e8a8a426ac8837fd0ed *man/contourmvd.Rd
-3c9a13f4c510e37f9ea497fdfd54f682 *man/diststudent.Rd
+d02ab3c613d1918f0c2227af2d40a310 *man/diststudent.Rd
 efa9f19cacd772f98758108566982725 *man/dmcd.Rd
 68e34e7431f583a92d79425806a25151 *man/dmggd.Rd
 221c63b84977ac5d3f39041535b4eeda *man/dmtd.Rd
@@ -34,11 +34,11 @@ b10ce48f7ac0ff1de61af4994f198d5a *man/estparmggd.Rd
 d07da0c555546bb4db0b84c603a1193f *man/estparmtd.Rd
 58492347f59059696254788422aa2d5c *man/kld.Rd
 04659e7588a8d2b3afaa5b9b01e3460e *man/kldcauchy.Rd
-38c31f7d026f955ae48b5daf10e84ea1 *man/kldggd.Rd
+727599e87db36c3f8c88f941328adae0 *man/kldggd.Rd
 a1bf27333820ac8248dd9db36e988129 *man/kldstudent.Rd
 0ab3e60217072b4b44e7c851fcf3586b *man/lauricella.Rd
 a411e34a74d796614d3f37852fc83af3 *man/lnpochhammer.Rd
-27278774546e0ddde1cf8156ead1388d *man/multvardiv-package.Rd
+742d1de1d7a484f9bb5e9e074934078c *man/multvardiv-package.Rd
 a36f1beb7457fa1072ad480cdbe3be87 *man/plotmvd.Rd
 2e58e163b0a5e1d67e238d349705bb00 *man/pochhammer.Rd
 7dfd15c32f4250bc72808be0ceba1568 *man/rmcd.Rd
@@ -52,6 +52,6 @@ a2cf8ea081cddcf44f52c4b3290a6210 *tests/testthat/test_estparmvtd.R
 abad8c37d1e112df3adff5957bb0c109 *tests/testthat/test_kldcauchy.R
 5a8850091f9d6a81d4abf4f54997874f *tests/testthat/test_kldggd.R
 08509b4b153dbcdc6507a89b8f12d270 *tests/testthat/test_kldstudent.R
-fd245b284f8589d03dbb5c8cfa4280a0 *tests/testthat/test_lauricella.R
+f66e5ad6837c336ad01d4154543a49b1 *tests/testthat/test_lauricella.R
 2d1a3c7cf8b6effdc707450e7f43f8d9 *tests/testthat/test_rmcd.R
 182ac1066c8ea3385e99a19c3b70cd44 *tests/testthat/test_rmggd.R

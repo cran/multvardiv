@@ -44,7 +44,7 @@ N. Bouhlel and D. Rousseau (2023), Exact Rényi and Kullback-Leibler Divergences
 Useful links:
 \itemize{
   \item \url{https://forge.inrae.fr/imhorphen/multvardiv}
-  \item Report bugs at \url{https://forge.inrae.fr/imhorphen/multvardiv/-/issues}
+  \item Report bugs at \url{https://forge.inrae.fr/imhorphen/multvardiv/-/work_items}
 }
 
 }

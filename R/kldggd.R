@@ -23,8 +23,8 @@
 #' with parameters \eqn{(\mathbf{0}, \Sigma_2, \beta_2)}.
 #'
 #' The Kullback-Leibler divergence between \eqn{X_1} and \eqn{X_2} is given by:
-#' \deqn{ \displaystyle{ KL(\mathbf{X}_1||\mathbf{X}_2) = \ln{\left(\frac{\beta_1 |\Sigma_1|^{-1/2} \Gamma\left(\frac{p}{2\beta_2}\right)}{\beta_2 |\Sigma_2|^{-1/2} \Gamma\left(\frac{p}{2\beta_1}\right)}\right)} + \frac{p}{2} \left(\frac{1}{\beta_2} - \frac{1}{\beta_1}\right) \ln{2} - \frac{p}{2\beta_2} + 2^{\frac{\beta_2}{\beta_1}-1} \frac{\Gamma{\left(\frac{\beta_2}{\beta_1} + \frac{p}{\beta_1}\right)}}{\Gamma{\left(\frac{p}{2 \beta_1}\right)}} \lambda_p^{\beta_2} } }
-#' \deqn{ \displaystyle{ \times F_D^{(p-1)}\left(-\beta_1; \underbrace{\frac{1}{2},\dots,\frac{1}{2}}_{p-1}; \frac{p}{2}; 1-\frac{\lambda_{p-1}}{\lambda_p},\dots,1-\frac{\lambda_{1}}{\lambda_p}\right) } }
+#' \deqn{ \displaystyle{ KL(\mathbf{X}_1||\mathbf{X}_2) = \ln{\left(\frac{\beta_1 |\Sigma_1|^{-1/2} \Gamma\left(\frac{p}{2\beta_2}\right)}{\beta_2 |\Sigma_2|^{-1/2} \Gamma\left(\frac{p}{2\beta_1}\right)}\right)} + \frac{p}{2} \left(\frac{1}{\beta_2} - \frac{1}{\beta_1}\right) \ln{2} - \frac{p}{2\beta_1} + 2^{\frac{\beta_2}{\beta_1}-1} \frac{\Gamma{\left(\frac{\beta_2}{\beta_1} + \frac{p}{2 \beta_1}\right)}}{\Gamma{\left(\frac{p}{2 \beta_1}\right)}} \lambda_p^{\beta_2} } }
+#' \deqn{ \displaystyle{ \times F_D^{(p-1)}\left(-\beta_2; \underbrace{\frac{1}{2},\dots,\frac{1}{2}}_{p-1}; \frac{p}{2}; 1-\frac{\lambda_{p-1}}{\lambda_p},\dots,1-\frac{\lambda_1}{\lambda_p}\right) } }
 #' 
 #' where \eqn{\lambda_1 < ... < \lambda_{p-1} < \lambda_p} are the eigenvalues
 #' of the matrix \eqn{\Sigma_1 \Sigma_2^{-1}}\cr
@@ -38,7 +38,7 @@
 #' with parameters \eqn{(0, \sigma_1, \beta_1)}
 #' and \eqn{X_2}, a random variable distributed according to the generalized Gaussian distribution
 #' with parameters \eqn{(0, \sigma_2, \beta_2)}.
-#' \deqn{ KL(X_1||X_2) = \displaystyle{ \ln{\left(\frac{\frac{\beta_1}{\sqrt{\sigma_1}} \Gamma\left(\frac{1}{2\beta_2}\right)}{\frac{\beta_2}{\sqrt{\sigma_2}} \Gamma\left(\frac{1}{2\beta_1}\right)}\right)} + \frac{1}{2} \left(\frac{1}{\beta_2} - \frac{1}{\beta_1}\right) \ln{2} - \frac{1}{2\beta_2} + 2^{\frac{\beta_2}{\beta_1}-1} \frac{\Gamma{\left(\frac{\beta_2}{\beta_1} + \frac{1}{\beta_1}\right)}}{\Gamma{\left(\frac{1}{2 \beta_1}\right)}} \left(\frac{\sigma_1}{\sigma_2}\right)^{\beta_2} } }
+#' \deqn{ KL(X_1||X_2) = \displaystyle{ \ln{\left(\frac{\frac{\beta_1}{\sqrt{\sigma_1}} \Gamma\left(\frac{1}{2\beta_2}\right)}{\frac{\beta_2}{\sqrt{\sigma_2}} \Gamma\left(\frac{1}{2\beta_1}\right)}\right)} + \frac{1}{2} \left(\frac{1}{\beta_2} - \frac{1}{\beta_1}\right) \ln{2} - \frac{1}{2\beta_1} + 2^{\frac{\beta_2}{\beta_1}-1} \frac{\Gamma{\left(\frac{\beta_2}{\beta_1} + \frac{1}{2 \beta_1}\right)}}{\Gamma{\left(\frac{1}{2 \beta_1}\right)}} \left(\frac{\sigma_1}{\sigma_2}\right)^{\beta_2} } }
 #' @seealso [dmggd]: probability density of a MGGD.
 #'
 #' @author Pierre Santagostini, Nizar Bouhlel

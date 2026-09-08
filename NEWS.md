@@ -1,3 +1,9 @@
+# multvardiv 1.0.16
+
+* Small changes in help pages:  
+  kldggd function (Details): an error is fixed in math formulae of the divergence.  
+  diststudent function: a precision added.
+
 # multvardiv 1.0.15
 
 * The title of the package is modified, to highlight the three

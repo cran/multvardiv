@@ -22,11 +22,15 @@ export(rmtd)
 import(rgl)
 importFrom(MASS,mvrnorm)
 importFrom(data.table,rbindlist)
-importFrom(graphics,contour)
-importFrom(graphics,par)
-importFrom(graphics,plot)
+importFrom(graphics,
+  contour,
+  par,
+  plot
+)
 importFrom(rgl,plot3d)
-importFrom(stats,rchisq)
-importFrom(stats,rgamma)
-importFrom(stats,uniroot)
+importFrom(stats,
+  rchisq,
+  rgamma,
+  uniroot
+)
 importFrom(utils,combn)
